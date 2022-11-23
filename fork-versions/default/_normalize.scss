@@ -1,4 +1,5 @@
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+@use "sass:math";
 
 @import 'variables';
 @import 'vertical-rhythm';
@@ -32,12 +33,12 @@ html {
   @if $base-font-size != 16px or $normalize-vertical-rhythm {
     // Correct old browser bug that prevented accessible resizing of text
     // when root font-size is set with px or em.
-    font-size: ($base-font-size / 16px) * 100%;
+    font-size: math.div($base-font-size, 16px) * 100%;
   }
   @if $normalize-vertical-rhythm {
     // Establish a vertical rhythm unit using $base-font-size and
     // $base-line-height variables.
-    line-height: ($base-line-height / $base-font-size) * 1em; /* 1 */
+    line-height: math.div($base-line-height, $base-font-size) * 1em; /* 1 */
   }
   @else {
     line-height: 1.15; /* 1 */
