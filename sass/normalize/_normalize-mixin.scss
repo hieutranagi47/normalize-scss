@@ -2,12 +2,11 @@
 
 // Helper function for the normalize() mixin.
 
+// Initialize the global variables needed by _normalize-include.
+$_normalize-include: () !default;
+$_normalize-exclude: () !default;
+
 @function _normalize-include($section, $exclude: null) {
-  // Initialize the global variables needed by this function.
-  @if not global_variable_exists(_normalize-include) {
-    $_normalize-include: () !global;
-    $_normalize-exclude: () !global;
-  }
   // Since we are given 2 parameters, set the global variables.
   @if $exclude != null {
     $include: $section;
