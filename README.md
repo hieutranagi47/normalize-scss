@@ -16,7 +16,7 @@ __This project is the Sass version of Normalize.css__, a collection of HTML elem
 This Sass port currently adds:
 
 * Vertical rhythm mixins: Allowing you to alter the font-size, line-height and margins in Normalize’s output without hacking the library.
-* Several ready-to-fork versions that integrate typography Sass modules like Typey, or style guides built with KSS.
+* A ready-to-fork version.
 
 # normalize.css v5
 
@@ -52,10 +52,7 @@ There is a fantastic introduction to the project and brief instructions how to u
 You can use the Sass port of Normalize in one of several methods, following the "About normalize.css" article's suggestions:
 
 __Approach 1:__ Download and use normalize-scss as a starting point for your own project's base Sass, customising the values to match the design's requirements. (The best approach, _IMO_.)
-  1. Copy the normalize-scss files to your sass directory so that you can alter it as you include it in your project. To aid with this method, normalize-scss includes several ready-made "fork" versions:
-    * [fork-versions/default](fork-versions/default) - Fork for libSass or Ruby Sass
-    * [fork-versions/typey](fork-versions/typey) - Fork with Typey
-    * [fork-versions/typey-chroma-kss](fork-versions/typey-chroma-kss) - Fork with Typey, Chroma and KSS
+  1. Copy the normalize-scss files to your sass directory so that you can alter it as you include it in your project. To aid with this method, normalize-scss includes a ready-made "fork" version in the [fork-version](fork-version/) directory.
 
 __Approach 2:__ Install and include normalize-scss untouched and then build upon it, overriding the defaults later in your Sass when necessary. Just import normalize-scss like any normal Sass module by:
   1. Set variables to override the default normalize-scss variables.
