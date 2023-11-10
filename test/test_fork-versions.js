@@ -1,47 +1,54 @@
-'use strict';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import SassyTest from 'sassy-test';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 describe('Fork versions', function() {
   describe('Default fork', function() {
-    it('should render properly', function() {
-      var sassyTest = new SassyTest({
+    it('should compile properly', function() {
+      const sassyTest = new SassyTest({
         fixtures: path.join(__dirname, 'fixtures/fork-versions'),
-        includePaths: [
+        loadPaths: [
           // Path to fork version.
           path.join(__dirname, '../fork-versions/default')
         ]
       });
-      return sassyTest.renderFixture('default');
+      return sassyTest.compileFixture('default');
     });
   });
 
   describe('Typey fork', function() {
-    it('should render properly', function() {
-      var sassyTest = new SassyTest({
+    it('should compile properly', async function() {
+      const typeyPath = fileURLToPath(await import.meta.resolve('typey'));
+      const sassyTest = new SassyTest({
         fixtures: path.join(__dirname, 'fixtures/fork-versions'),
-        includePaths: [
+        loadPaths: [
           // Path to fork version.
           path.join(__dirname, '../fork-versions/typey'),
           // Path to the fork's dependencies.
-          path.dirname(require.resolve('typey'))
+          path.dirname(typeyPath)
         ]
       });
-      return sassyTest.renderFixture('typey');
+      return sassyTest.compileFixture('typey');
     });
   });
 
-  describe('Typey, Chroma and KSS fork', function() {
-    it('should render properly', function() {
-      var sassyTest = new SassyTest({
+  describe('Typey, Chroma and KSS fork', async function() {
+    it('should compile properly', async function() {
+      const chromaPath = fileURLToPath(await import.meta.resolve('chroma-sass'));
+      const typeyPath = fileURLToPath(await import.meta.resolve('typey'));
+      const sassyTest = new SassyTest({
         fixtures: path.join(__dirname, 'fixtures/fork-versions'),
-        includePaths: [
+        loadPaths: [
           // Path to fork version.
           path.join(__dirname, '../fork-versions/typey-chroma-kss'),
           // Path to the fork's dependencies.
-          path.dirname(require.resolve('chroma-sass')),
-          path.dirname(require.resolve('typey'))
+          path.dirname(chromaPath),
+          path.dirname(typeyPath)
         ]
       });
-      return sassyTest.renderFixture('typey-chroma-kss');
+      return sassyTest.compileFixture('typey-chroma-kss');
     });
   });
 });

@@ -60,17 +60,15 @@ __Approach 1:__ Download and use normalize-scss as a starting point for your own
 
 __Approach 2:__ Install and include normalize-scss untouched and then build upon it, overriding the defaults later in your Sass when necessary. Just import normalize-scss like any normal Sass module by:
   1. Set variables to override the default normalize-scss variables.
-  2. (Optionally) add an additional `[path to]/normalize-scss/sass` import path for your Sass compiler, e.g. [node-sass' `includePaths`](https://github.com/sass/node-sass#includepaths) option or [Ruby Sass' `--load-path`](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#import) option.
-  3. Import with `@import "normalize";` or with `@import "[path to]/normalize-scss/sass/normalize";` (if you skipped step 2.)
+  2. (Optionally) add an additional `node_modules/normalize-scss/sass` import path for your application's Sass compiler or loader, e.g. PostCSS or webpack's sass-loader.
+  3. Import with `@import "normalize";` or with `@import "node_modules/normalize-scss/sass/normalize";` (if you skipped step 2.)
   4. Output the CSS rules with `@include normalize();`
 
 Alternatively, you can import normalize-scss immediately into your main Sass file without needing to use the `normalize()` mixin by:
 
   1. (Optionally) set variables to override the default normalize-scss variables.
-  2. (Optionally) add an additional `[path to]/normalize-scss/sass` import path for your Sass compiler, e.g. [node-sass' `includePaths`](https://github.com/sass/node-sass#includepaths) option or [Ruby Sass' `--load-path`](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#import) option.
-  3. Import with `@import "normalize/import-now";` or with `@import "[path to]/normalize-scss/sass/normalize/import-now";` (if you skipped step 2.)
-
-Note: if you use [wiredep](https://github.com/taptapship/wiredep), normalize-scss's bower.json points at the normalize/import-now Sass partial. If you don't wish to immediately output the CSS, you will need to override the Sass partial that wiredep grabs from normalize-scss.
+  2. (Optionally) add an additional `node_modules/normalize-scss/sass` import path for your application's Sass compiler or loader, e.g. PostCSS or webpack's sass-loader.
+  3. Import with `@import "normalize/import-now";` or with `@import "node_modules/normalize-scss/sass/normalize/import-now";` (if you skipped step 2.)
 
 ## Browser support
 
@@ -154,5 +152,3 @@ For the record, there are several other Sass ports as well. Including:
 * https://github.com/hail2u/normalize.scss
 * https://github.com/kristerkari/normalize.scss
 * https://github.com/krisbulman/normalize-libsass
-
-[![Build Status](https://travis-ci.org/JohnAlbin/normalize-scss.png?branch=master)](https://travis-ci.org/JohnAlbin/normalize-scss)

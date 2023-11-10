@@ -1,37 +1,40 @@
-'use strict';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import SassyTest from 'sassy-test';
 
-var sassyTest = new SassyTest();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const sassyTest = new SassyTest();
 
 describe('Configuration variables', function() {
   before(function(done) {
     sassyTest.configurePaths({
       fixtures: path.join(__dirname, 'fixtures'),
-      includePaths: [path.join(__dirname, '../sass')]
+      loadPaths: [path.join(__dirname, '../sass')]
     });
     done();
   });
 
   describe('default values', function() {
     it('should limit output to the same output as normalize.css', function() {
-      return sassyTest.renderFixture('variables/default');
+      return sassyTest.compileFixture('variables/default');
     });
   });
 
   describe('$base-* and $h*-font-size', function() {
     it('should alter the font, font size, and line-height', function() {
-      return sassyTest.renderFixture('variables/font');
+      return sassyTest.compileFixture('variables/font');
     });
   });
 
   describe('$indent-amount', function() {
     it('should alter the indent amount of elements', function() {
-      return sassyTest.renderFixture('variables/indent-amount');
+      return sassyTest.compileFixture('variables/indent-amount');
     });
   });
 
   describe('$indent-amount and $normalize-vertical-rhythm', function() {
     it('should alter the indent amount of elements', function() {
-      return sassyTest.renderFixture('variables/indent-amount-and-vertical-rhythm');
+      return sassyTest.compileFixture('variables/indent-amount-and-vertical-rhythm');
     });
   });
 });
