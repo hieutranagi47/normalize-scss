@@ -16,7 +16,6 @@ __This project is the Sass version of Normalize.css__, a collection of HTML elem
 This Sass port currently adds:
 
 * Vertical rhythm mixins: Allowing you to alter the font-size, line-height and margins in Normalize’s output without hacking the library.
-* Optional Eyeglass support.
 * Several ready-to-fork versions that integrate typography Sass modules like Typey, or style guides built with KSS.
 
 # normalize.css v5

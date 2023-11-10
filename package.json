@@ -13,19 +13,12 @@
   "author": "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)",
   "license": "(MIT OR GPL-2.0)",
   "keywords": [
-    "eyeglass-module",
     "sass",
     "normalize"
   ],
   "type": "module",
   "main": "sass/_normalize.scss",
   "style": "sass/_normalize.scss",
-  "eyeglass": {
-    "sassDir": "sass",
-    "exports": false,
-    "name": "normalize",
-    "needs": "*"
-  },
   "directories": {
     "lib": "sass",
     "test": "test"
@@ -43,7 +36,6 @@
     "chai": "^4.3.10",
     "chroma-sass": "^1.2.3",
     "eslint": "^8.53.0",
-    "eyeglass": "^3.0.3",
     "mocha": "^10.2.0",
     "sassy-test": "^5.0.1",
     "typey": "^1.1.2"
