@@ -20,7 +20,7 @@ describe('Fork versions', function() {
 
   describe('Typey fork', function() {
     it('should compile properly', async function() {
-      const typeyPath = fileURLToPath(await import.meta.resolve('typey'));
+      const typeyPath = fileURLToPath(import.meta.resolve('typey'));
       const sassyTest = new SassyTest({
         fixtures: path.join(__dirname, 'fixtures/fork-versions'),
         loadPaths: [
@@ -36,8 +36,8 @@ describe('Fork versions', function() {
 
   describe('Typey, Chroma and KSS fork', async function() {
     it('should compile properly', async function() {
-      const chromaPath = fileURLToPath(await import.meta.resolve('chroma-sass'));
-      const typeyPath = fileURLToPath(await import.meta.resolve('typey'));
+      const chromaPath = fileURLToPath(import.meta.resolve('chroma-sass'));
+      const typeyPath = fileURLToPath(import.meta.resolve('typey'));
       const sassyTest = new SassyTest({
         fixtures: path.join(__dirname, 'fixtures/fork-versions'),
         loadPaths: [
