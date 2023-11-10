@@ -2,12 +2,12 @@
 
 ## Latest versions
 
-For use with…                | normalize-scss version
------------------------------|-----------------------
-Sass 3.4 or libSass | [8.0.0](https://github.com/JohnAlbin/normalize-scss/releases/tag/8.0.0)<br> combining normalize.css v7.0.0 with v1.1.3
-Compass or Bower | [7.0.0](https://github.com/JohnAlbin/normalize-scss/releases/tag/7.0.0)<br> combining normalize.css v7.0.0 with v1.1.3 (last version with Compass and Bower support)
-Ruby Sass 3.3       | [3.0.3](https://github.com/JohnAlbin/normalize-scss/releases/tag/3.0.3)<br> combining normalize.css v3.0.3 with v1.1.3
-Ruby Sass 3.2       | [2.2.0+normalize.2.1.3](https://github.com/JohnAlbin/normalize-scss/releases/tag/2.2.0%2Bnormalize.2.1.3)<br> combining normalize.css v2.1.3 with v1.1.3
+| For use with…    | normalize-scss version                                                                                                                                               |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| The latest Sass  | [8.0.0](https://github.com/JohnAlbin/normalize-scss/releases/tag/8.0.0)<br> combining normalize.css v8.0.0 with v1.1.3                                               |
+| Compass or Bower | [7.0.1](https://github.com/JohnAlbin/normalize-scss/releases/tag/7.0.1)<br> combining normalize.css v7.0.0 with v1.1.3 (last version with Compass and Bower support) |
+| Ruby Sass 3.3    | [3.0.3](https://github.com/JohnAlbin/normalize-scss/releases/tag/3.0.3)<br> combining normalize.css v3.0.3 with v1.1.3                                               |
+| Ruby Sass 3.2    | [2.2.0+normalize.2.1.3](https://github.com/JohnAlbin/normalize-scss/releases/tag/2.2.0%2Bnormalize.2.1.3)<br> combining normalize.css v2.1.3 with v1.1.3             |
 
 ## The Sass port of normalize.css
 
@@ -18,7 +18,7 @@ This Sass port currently adds:
 * Vertical rhythm mixins: Allowing you to alter the font-size, line-height and margins in Normalize’s output without hacking the library.
 * A ready-to-fork version.
 
-# normalize.css v5
+# normalize.css v8
 
 > A modern alternative to CSS resets
 
@@ -68,13 +68,12 @@ Alternatively, you can import normalize-scss immediately into your main Sass fil
 
 ## Browser support
 
-* Chrome (last four)
-* Edge (version 25 and later)
-* Firefox (last four)
-* Firefox ESR
-* Internet Explorer 9+
-* Opera (last four)
-* Safari (last four)
+* Chrome
+* Edge
+* Firefox ESR+
+* Internet Explorer 10+
+* Safari 8+
+* Opera
 
 
 ## Extended details and known issues
@@ -91,13 +90,6 @@ intentional. [Source](https://en.wikipedia.org/wiki/User:Davidgothberg/Test59).
 
 Normally, using `sub` or `sup` affects the line-box height of text in all
 browsers. [Source](https://gist.github.com/413930).
-
-#### `svg:not(:root)`
-
-Adding `overflow: hidden` fixes IE9's SVG rendering. Earlier versions of IE
-don't support SVG, so we can safely use the `:not()` and `:root` selectors that
-modern browsers use in the default UA stylesheets to apply this style.
-[Source](https://lists.w3.org/Archives/Public/public-svg-wg/2008JulSep/0339.html).
 
 #### `select`
 
@@ -123,8 +115,7 @@ Chrome and Safari on Windows you can't control `border` properly. It will apply
 `border-width` but will only show a border color (which cannot be controlled)
 for the outer 1px of that border. Applying `-webkit-appearance: textfield`
 addresses these issues without removing the benefits of search inputs (e.g.
-showing past searches). Safari (but not Chrome) will clip the cancel button on
-when it has padding (and `textfield` appearance).
+showing past searches).
 
 ## Contributing
 
