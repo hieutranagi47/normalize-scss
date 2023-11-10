@@ -20,6 +20,12 @@ describe('Configuration variables', function() {
     });
   });
 
+  describe('$normalize-vertical-rhythm: false', function() {
+    it('should not output vertical rhythm rulesets', function() {
+      return sassyTest.compileFixture('variables/prevent-vertical-rhythm');
+    });
+  });
+
   describe('$base-* and $h*-font-size', function() {
     it('should alter the font, font size, and line-height', function() {
       return sassyTest.compileFixture('variables/font');
