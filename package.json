@@ -28,8 +28,7 @@
     "posttest": "eslint test",
     "changelog": "auto-changelog --commit-limit false --unreleased",
     "preversion": "npm test",
-    "gemspec": "cat normalize-scss.gemspec | sed -E 's/spec\\.version += '\"'[^']+'\"'/spec.version     = '\"'$npm_package_version'/\" | sed -E 's/spec\\.date += '\"'[^']+'\"'/spec.date        = '\"'`date '+%Y-%m-%d'`'/\" > normalize-scss.gemspec && git add normalize-scss.gemspec",
-    "version": "npm run gemspec && auto-changelog --commit-limit false --package && git add CHANGELOG.md"
+    "version": "auto-changelog --commit-limit false --package && git add CHANGELOG.md"
   },
   "devDependencies": {
     "auto-changelog": "^2.4.0",
